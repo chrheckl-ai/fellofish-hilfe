@@ -1,0 +1,210 @@
+<!doctype html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="description" content="Tipps für Schülerinnen und Schüler: handschriftliche Texte für FelloFish digitalisieren und außerhalb von FelloFish überarbeiten">
+<title>FelloFish Hilfe</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:ital,wght@0,400;0,700;1,400&family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&display=swap">
+<style>
+/* Layout: eine schmale Anleitung fürs Smartphone; zwei Schritte, darin Karten mit nummerierten Handgriffen. */
+:root {
+  --bg: #f4f8f6; --surface: #ffffff; --ink: #17251f; --muted: #55665f; --line: #d6e2dc;
+  --accent: #1d7a58; --accent-soft: #e2f3ea; --fish: #d9821f; --fish-soft: #fdf1e1;
+  --shadow: 0 1px 2px rgba(23, 37, 31, .06), 0 6px 20px rgba(23, 37, 31, .06);
+  --font-display: "Bricolage Grotesque", "Segoe UI", system-ui, sans-serif;
+  --font-body: "Atkinson Hyperlegible", "Segoe UI", system-ui, -apple-system, sans-serif;
+  color-scheme: light;
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #0f1714; --surface: #16211d; --ink: #e2ece7; --muted: #9cb0a7; --line: #2a3a34;
+    --accent: #6fd1a6; --accent-soft: #1b3229; --fish: #f0a54a; --fish-soft: #2e2416;
+    --shadow: 0 1px 2px rgba(0,0,0,.4), 0 6px 20px rgba(0,0,0,.3);
+    color-scheme: dark;
+  }
+}
+* { box-sizing: border-box; }
+body {
+  margin: 0; background: var(--bg); color: var(--ink);
+  font-family: var(--font-body); font-size: 17px; line-height: 1.6;
+}
+.wrap {
+  max-width: 760px; margin: 0 auto;
+  padding-left: max(16px, env(safe-area-inset-left, 0px));
+  padding-right: max(16px, env(safe-area-inset-right, 0px));
+}
+h1, h2, h3 { font-family: var(--font-display); line-height: 1.15; text-wrap: balance; margin: 0; }
+h1 { font-size: clamp(2rem, 7vw, 2.8rem); font-weight: 800; letter-spacing: -0.02em; }
+h2 { font-size: clamp(1.45rem, 5vw, 1.9rem); font-weight: 700; }
+h3 { font-size: 1.15rem; font-weight: 700; }
+p { margin: 0; }
+a { color: var(--accent); }
+:focus-visible { outline: 3px solid var(--fish); outline-offset: 2px; border-radius: 4px; }
+
+header { padding-block: max(32px, env(safe-area-inset-top, 0px)) 8px; display: grid; gap: 14px; }
+.eyebrow { font-size: .78rem; font-weight: 700; letter-spacing: .12em; text-transform: uppercase; color: var(--accent); }
+.lead { font-size: 1.08rem; }
+
+.flow { display: flex; flex-wrap: wrap; align-items: center; gap: 6px; font-size: .9rem; margin-top: 4px; }
+.flow span.s { background: var(--surface); border: 1px solid var(--line); border-radius: 999px; padding: 3px 11px; }
+.flow span.s.ff { border-color: var(--accent); background: var(--accent-soft); }
+.flow span.a { color: var(--muted); }
+.legend { font-size: .85rem; color: var(--muted); }
+.legend b { color: var(--accent); }
+
+section { padding-block: 36px 4px; display: grid; gap: 16px; }
+.step-head { display: grid; grid-template-columns: auto 1fr; gap: 4px 14px; align-items: center; }
+.num {
+  width: 2.6rem; height: 2.6rem; border-radius: 50%; display: grid; place-items: center;
+  background: var(--accent); color: var(--surface); font-family: var(--font-display); font-weight: 800; font-size: 1.3rem;
+}
+.step-head p { grid-column: 2; color: var(--muted); }
+
+.why {
+  background: var(--fish-soft); border-left: 4px solid var(--fish); border-radius: 0 10px 10px 0; padding: 10px 14px;
+}
+.cards { display: grid; gap: 14px; }
+.card {
+  background: var(--surface); border: 1px solid var(--line); border-radius: 14px; box-shadow: var(--shadow);
+  padding: 16px 18px; display: grid; gap: 10px; min-width: 0;
+}
+.card .tag { font-size: .75rem; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; color: var(--accent); }
+.card .tag.warn { color: var(--fish); }
+ol.do { margin: 0; padding-left: 1.4em; display: grid; gap: 7px; }
+ol.do li::marker { color: var(--accent); font-weight: 700; }
+ol.do li.final { font-weight: 700; }
+.small { font-size: .9rem; color: var(--muted); }
+.prompt {
+  background: var(--bg); border: 1px dashed var(--line); border-radius: 10px; padding: 10px 12px;
+  display: grid; gap: 8px;
+}
+.prompt q { font-style: italic; quotes: "„" "“"; }
+.btn {
+  justify-self: start; font: inherit; font-size: .9rem; font-weight: 700; cursor: pointer; border-radius: 9px;
+  padding: 7px 12px; border: 1px solid var(--accent); background: transparent; color: var(--accent);
+}
+.status { font-size: .85rem; color: var(--accent); min-height: 1.2em; }
+.ui { font-weight: 700; }
+.tip {
+  background: var(--accent-soft); border-radius: 12px; padding: 14px 16px; display: grid; gap: 4px;
+}
+.tip b.label { font-size: .75rem; letter-spacing: .12em; text-transform: uppercase; color: var(--accent); }
+footer { padding-block: 40px max(32px, env(safe-area-inset-bottom, 0px)); color: var(--muted); font-size: .85rem; }
+</style>
+</head>
+<body>
+<header class="wrap">
+  <span class="eyebrow">Für Schülerinnen und Schüler · Freiherr-vom-Stein-Gymnasium</span>
+  <h1>FelloFish: So klappt es leichter</h1>
+  <p class="lead">Du lernst hier zwei Schritte, die dir die Arbeit mit FelloFish erleichtern: Wie du einen handschriftlichen Text in Maschinenschrift umwandelst und wie du deinen Text danach außerhalb von FelloFish überarbeitest.</p>
+  <div class="flow" aria-label="Der Weg deines Textes">
+    <span class="s">von Hand schreiben</span><span class="a" aria-hidden="true">→</span>
+    <span class="s">in die Notizen-App holen</span><span class="a" aria-hidden="true">→</span>
+    <span class="s ff">in FelloFish einfügen, Feedback holen</span><span class="a" aria-hidden="true">→</span>
+    <span class="s">in der Notizen-App überarbeiten</span><span class="a" aria-hidden="true">→</span>
+    <span class="s ff">in FelloFish einfügen, final abgeben</span>
+  </div>
+  <p class="legend">Die Idee: Dein Text lebt in der <b>Notizen-App</b>. In FelloFish fügst du ihn nur ein.</p>
+</header>
+
+<main>
+  <section class="wrap" aria-labelledby="s1">
+    <div class="step-head">
+      <span class="num" aria-hidden="true">1</span>
+      <h2 id="s1">Text in Maschinenschrift umwandeln</h2>
+      <p>Mach das nicht direkt in FelloFish, sondern vorher auf deinem Smartphone oder Tablet.</p>
+    </div>
+    <p class="why">Das Abfotografieren in FelloFish ist manchmal hakelig. Mit einer dieser drei Varianten geht es zuverlässiger.</p>
+    <div class="cards">
+      <article class="card">
+        <span class="tag">Variante A</span>
+        <h3>Foto und Notizen-App</h3>
+        <ol class="do">
+          <li>Fotografiere deinen Text mit dem Smartphone oder Tablet ab.</li>
+          <li>Öffne das Foto in deiner Fotogalerie.</li>
+          <li>Markiere den Text im Foto und kopiere ihn.</li>
+          <li>Füge ihn in eine Notiz ein, zum Beispiel in Apple Notizen. Noch nicht in FelloFish!</li>
+          <li>Korrigiere in der Notiz die Fehler, die beim Erkennen entstanden sind.</li>
+          <li class="final">Erst jetzt: Text kopieren, in FelloFish einfügen und das erste Feedback holen.</li>
+        </ol>
+        <p class="small">Auf Android-Geräten markierst du den Text mit Google Lens, zum Beispiel über den Lens-Knopf in Google Fotos.</p>
+      </article>
+      <article class="card">
+        <span class="tag">Variante B</span>
+        <h3>Diktieren</h3>
+        <ol class="do">
+          <li>Gut für kürzere Texte: Öffne eine Notiz und tippe auf der Tastatur auf das Mikrofon.</li>
+          <li>Sprich deinen Text ein und korrigiere danach, was falsch erkannt wurde.</li>
+          <li class="final">Erst jetzt: Text kopieren, in FelloFish einfügen und das erste Feedback holen.</li>
+        </ol>
+      </article>
+      <article class="card">
+        <span class="tag warn">Variante C · nur für volljährige Schülerinnen und Schüler</span>
+        <h3>Mit einer KI abschreiben lassen</h3>
+        <ol class="do">
+          <li>Lade das Foto deines Textes in eine generative KI hoch, zum Beispiel ChatGPT oder Le Chat, und lass dir ein Transkript erstellen. Nutze dafür diesen Prompt:
+            <div class="prompt">
+              <q id="prompt-text">Erstelle mir daraus ein Transkript. Füge nichts hinzu, lasse auch nichts weg, übernimm auch Fehler.</q>
+              <button type="button" class="btn" id="copy-prompt">Prompt kopieren</button>
+              <span class="status" id="status" role="status" aria-live="polite"></span>
+            </div>
+          </li>
+          <li>Ist dein Text kaum lesbar? Dann sprich ihn als Audio ein und lass dir daraus ein Transkript erstellen.</li>
+          <li class="final">Erst jetzt: Text kopieren, in FelloFish einfügen und das erste Feedback holen.</li>
+        </ol>
+      </article>
+    </div>
+  </section>
+
+  <section class="wrap" aria-labelledby="s2">
+    <div class="step-head">
+      <span class="num" aria-hidden="true">2</span>
+      <h2 id="s2">Text außerhalb von FelloFish überarbeiten</h2>
+      <p>FelloFish gibt dir Feedback. Überarbeiten kannst du besser in deiner Notizen-App.</p>
+    </div>
+    <article class="card">
+      <ol class="do">
+        <li>Lies das Feedback in FelloFish.</li>
+        <li>Überarbeite deinen Text in der Notizen-App, also dort, wo dein digitalisierter Text liegt. Nicht in FelloFish, denn dort ist das Bearbeiten manchmal hakelig.</li>
+        <li>Fertig mit der Überarbeitung? Dann lösche in FelloFish deinen Entwurf.</li>
+        <li>Kopiere den überarbeiteten Text und füge ihn in FelloFish ein.</li>
+        <li class="final">Tippe auf <span class="ui">Text final abgeben</span>.</li>
+      </ol>
+    </article>
+    <div class="tip">
+      <b class="label">Tipp</b>
+      <p>Wenn es in FelloFish hakt: Lade die Seite im Browser neu.</p>
+    </div>
+  </section>
+</main>
+
+<footer class="wrap">
+  <p>Freiherr-vom-Stein-Gymnasium Leverkusen · Stand: November 2026</p>
+</footer>
+
+<script>
+(function () {
+  var btn = document.getElementById('copy-prompt');
+  var status = document.getElementById('status');
+  var text = document.getElementById('prompt-text').textContent;
+  function say(m) { status.textContent = m; setTimeout(function () { status.textContent = ''; }, 4000); }
+  function fallback() {
+    var ta = document.createElement('textarea');
+    ta.value = text; ta.setAttribute('readonly', ''); ta.style.position = 'fixed'; ta.style.opacity = '0';
+    document.body.appendChild(ta); ta.select();
+    var ok = false;
+    try { ok = document.execCommand('copy'); } catch (e) {}
+    document.body.removeChild(ta);
+    say(ok ? 'Prompt kopiert.' : 'Kopieren hat nicht geklappt. Markiere den Prompt und kopiere ihn von Hand.');
+  }
+  btn.addEventListener('click', function () {
+    try { navigator.clipboard.writeText(text).then(function () { say('Prompt kopiert.'); }, fallback); }
+    catch (e) { fallback(); }
+  });
+})();
+</script>
+</body>
+</html>
