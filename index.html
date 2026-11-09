@@ -88,6 +88,7 @@ ol.do li.final { font-weight: 700; }
   padding: 7px 12px; border: 1px solid var(--accent); background: transparent; color: var(--accent);
 }
 .status { font-size: .85rem; color: var(--accent); min-height: 1.2em; }
+.hint { font-size: .9rem; background: var(--fish-soft); border-radius: 8px; padding: 8px 12px; }
 .ui { font-weight: 700; }
 .tip {
   background: var(--accent-soft); border-radius: 12px; padding: 14px 16px; display: grid; gap: 4px;
@@ -99,16 +100,16 @@ footer { padding-block: 40px max(32px, env(safe-area-inset-bottom, 0px)); color:
 <body>
 <header class="wrap">
   <span class="eyebrow">Für Schülerinnen und Schüler · Freiherr-vom-Stein-Gymnasium</span>
-  <h1>FelloFish: So klappt es leichter</h1>
-  <p class="lead">Du lernst hier zwei Schritte, die dir die Arbeit mit FelloFish erleichtern: Wie du einen handschriftlichen Text in Maschinenschrift umwandelst und wie du deinen Text danach außerhalb von FelloFish überarbeitest.</p>
-  <div class="flow" aria-label="Der Weg deines Textes">
+  <h1>FelloFish: Wenn es mal hakt</h1>
+  <p class="lead">FelloFish kann deinen handschriftlichen Text direkt abfotografieren und in Maschinenschrift umwandeln. Das klappt aber nicht immer reibungslos, und auch das Überarbeiten in FelloFish ist manchmal hakelig. Dann hilft ein Umweg: Du wandelst deinen Text außerhalb von FelloFish um, überarbeitest ihn dort und fügst ihn in FelloFish nur noch ein.</p>
+  <div class="flow" aria-label="Der Umweg im Überblick">
     <span class="s">von Hand schreiben</span><span class="a" aria-hidden="true">→</span>
     <span class="s">in die Notizen-App holen</span><span class="a" aria-hidden="true">→</span>
     <span class="s ff">in FelloFish einfügen, Feedback holen</span><span class="a" aria-hidden="true">→</span>
     <span class="s">in der Notizen-App überarbeiten</span><span class="a" aria-hidden="true">→</span>
     <span class="s ff">in FelloFish einfügen, final abgeben</span>
   </div>
-  <p class="legend">Die Idee: Dein Text lebt in der <b>Notizen-App</b>. In FelloFish fügst du ihn nur ein.</p>
+  <p class="legend">Beim Umweg liegt dein Text in der <b>Notizen-App</b>. In FelloFish fügst du ihn nur ein.</p>
 </header>
 
 <main>
@@ -116,12 +117,12 @@ footer { padding-block: 40px max(32px, env(safe-area-inset-bottom, 0px)); color:
     <div class="step-head">
       <span class="num" aria-hidden="true">1</span>
       <h2 id="s1">Text in Maschinenschrift umwandeln</h2>
-      <p>Mach das nicht direkt in FelloFish, sondern vorher auf deinem Smartphone oder Tablet.</p>
+      <p>Probier zuerst das Abfotografieren direkt in FelloFish. Klappt das nicht gut, wandle den Text vorher auf deinem Smartphone oder Tablet um.</p>
     </div>
-    <p class="why">Das Abfotografieren in FelloFish ist manchmal hakelig. Mit einer dieser drei Varianten geht es zuverlässiger.</p>
+    <p class="why">Das Abfotografieren in FelloFish ist manchmal hakelig. Dann helfen diese drei Varianten.</p>
     <div class="cards">
       <article class="card">
-        <span class="tag">Variante A</span>
+        <span class="tag">Variante A · empfohlen</span>
         <h3>Foto und Notizen-App</h3>
         <ol class="do">
           <li>Fotografiere deinen Text mit dem Smartphone oder Tablet ab.</li>
@@ -141,6 +142,7 @@ footer { padding-block: 40px max(32px, env(safe-area-inset-bottom, 0px)); color:
           <li>Sprich deinen Text ein und korrigiere danach, was falsch erkannt wurde.</li>
           <li class="final">Erst jetzt: Text kopieren, in FelloFish einfügen und das erste Feedback holen.</li>
         </ol>
+        <p class="hint"><b>Achtung:</b> Beim Diktieren schreibt dein Gerät die Wörter automatisch richtig. Das Feedback zu Rechtschreibung und Zeichensetzung sagt dann kaum etwas über deine eigene Rechtschreibung aus.</p>
       </article>
       <article class="card">
         <span class="tag warn">Variante C · nur für volljährige Schülerinnen und Schüler</span>
@@ -163,13 +165,13 @@ footer { padding-block: 40px max(32px, env(safe-area-inset-bottom, 0px)); color:
   <section class="wrap" aria-labelledby="s2">
     <div class="step-head">
       <span class="num" aria-hidden="true">2</span>
-      <h2 id="s2">Text außerhalb von FelloFish überarbeiten</h2>
-      <p>FelloFish gibt dir Feedback. Überarbeiten kannst du besser in deiner Notizen-App.</p>
+      <h2 id="s2">Überarbeiten, wenn es in FelloFish hakt</h2>
+      <p>Normalerweise überarbeitest du deinen Text direkt in FelloFish. Funktioniert das nicht gut, nimm den Umweg über deine Notizen-App.</p>
     </div>
     <article class="card">
       <ol class="do">
         <li>Lies das Feedback in FelloFish.</li>
-        <li>Überarbeite deinen Text in der Notizen-App, also dort, wo dein digitalisierter Text liegt. Nicht in FelloFish, denn dort ist das Bearbeiten manchmal hakelig.</li>
+        <li>Überarbeite deinen Text in der Notizen-App, also dort, wo dein digitalisierter Text liegt.</li>
         <li>Fertig mit der Überarbeitung? Dann lösche in FelloFish deinen Entwurf.</li>
         <li>Kopiere den überarbeiteten Text und füge ihn in FelloFish ein.</li>
         <li class="final">Tippe auf <span class="ui">Text final abgeben</span>.</li>
